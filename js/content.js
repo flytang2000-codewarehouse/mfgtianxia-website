@@ -311,7 +311,7 @@ const siteContent = {
             `
         },
 <!-- 如下内容更换成Netlify表单要求的样子 -->
-        "contact": {
+"contact": {
     title: "Contact Us – Get Your Free Quote Today",
     content: `
         <div class="page-content">
@@ -325,17 +325,16 @@ const siteContent = {
                 </div>
                 <div class="cta-contact-item" style="margin-bottom: 15px;">
                     <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp: +86 134 3191 6523</span>
+                    <span>WhatsApp: +86 138 xxxx xxxx</span>
                 </div>
                 <div class="cta-contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Location: 4th Floor, Building A, No. 3 Yongbin Road, Tanzhou Town, Zhongshan City, Guangdong Province, China</span>
+                    <span>Location: Guangdong, China</span>
                 </div>
             </div>
-            <!-- 修改后的表单：加netlify标识和name属性 添加了action和redirect参数 -->
+            <!-- 核心修改：form标签添加action和redirect参数 -->
             <form class="contact-form" name="contact-form" method="POST" netlify action="/success.html" redirect="/success.html">
-            <!--原来的代码 <form class="contact-form" name="contact-form" method="POST" netlify> -->
-                <input type="hidden" name="form-name" value="contact-form"> <!-- 必须：Netlify识别表单 -->
+                <input type="hidden" name="form-name" value="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
@@ -500,3 +499,4 @@ document.getElementById("footer-content").innerHTML = `
     </div>
 `;
 document.getElementById("copyright-text").textContent = siteContent.footer.copyright;
+
