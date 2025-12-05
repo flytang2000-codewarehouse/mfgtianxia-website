@@ -91,8 +91,8 @@ const siteContent = {
     // 联系方式
     contact: {
         email: "info@mfgtianxia.com",
-        whatsapp: "+86 138 xxxx xxxx",
-        address: "Guangdong, China"
+        whatsapp: "+86 134 3191 6523",
+        address: "4th Floor, Building A, No. 3 Yongbin Road, Tanzhou Town, Zhongshan City, Guangdong Province, China"
     },
 
     // 页脚内容
@@ -310,55 +310,59 @@ const siteContent = {
                 </div>
             `
         },
+<!-- 如下内容更换成Netlify表单要求的样子 -->
         "contact": {
-            title: "Contact Us – Get Your Free Quote Today",
-            content: `
-                <div class="page-content">
-                    <div class="text-block">
-                        <p>Ready to start your CNC machining, stamping mold, or desktop injection molding project? Contact our English-speaking team for a free quote within 24 hours. Share your drawings or specs, and we'll provide detailed pricing, lead times, and design feedback – no obligation.</p>
-                    </div>
-                    <div class="cta-contact" style="justify-content: flex-start; margin: 30px 0;">
-                        <div class="cta-contact-item" style="margin-bottom: 15px;">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email: info@mfgtianxia.com</span>
-                        </div>
-                        <div class="cta-contact-item" style="margin-bottom: 15px;">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp: +86 138 xxxx xxxx</span>
-                        </div>
-                        <div class="cta-contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Location: Guangdong, China</span>
-                        </div>
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option value="cnc">Precision CNC Machining</option>
-                                <option value="stamping">Stamping Molds & Production</option>
-                                <option value="injection">Desktop Injection Molding Machines</option>
-                                <option value="other">Other (please specify)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Requirements (or attach drawings)</label>
-                            <textarea id="message" class="form-control" placeholder="Please describe your project, quantity, timeline, and any specific requirements..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Free Quote Request</button>
-                    </form>
+    title: "Contact Us – Get Your Free Quote Today",
+    content: `
+        <div class="page-content">
+            <div class="text-block">
+                <p>Ready to start your CNC machining, stamping mold, or desktop injection molding project? Contact our English-speaking team for a free quote within 24 hours. Share your drawings or specs, and we'll provide detailed pricing, lead times, and design feedback – no obligation.</p>
+            </div>
+            <div class="cta-contact" style="justify-content: flex-start; margin: 30px 0;">
+                <div class="cta-contact-item" style="margin-bottom: 15px;">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email: info@mfgtianxia.com</span>
                 </div>
-            `
-        }
+                <div class="cta-contact-item" style="margin-bottom: 15px;">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp: +86 134 3191 6523</span>
+                </div>
+                <div class="cta-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location: 4th Floor, Building A, No. 3 Yongbin Road, Tanzhou Town, Zhongshan City, Guangdong Province, China</span>
+                </div>
+            </div>
+            <!-- 修改后的表单：加netlify标识和name属性 添加了action和redirect参数 -->
+            <form class="contact-form" name="contact-form" method="POST" netlify action="/success.html" redirect="/success.html">
+            <!--原来的代码 <form class="contact-form" name="contact-form" method="POST" netlify> -->
+                <input type="hidden" name="form-name" value="contact-form"> <!-- 必须：Netlify识别表单 -->
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="john@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service" class="form-control" required>
+                        <option value="">Select a service</option>
+                        <option value="cnc">Precision CNC Machining</option>
+                        <option value="stamping">Stamping Molds & Production</option>
+                        <option value="injection">Desktop Injection Molding Machines</option>
+                        <option value="other">Other (please specify)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Requirements (or attach drawings)</label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Please describe your project, quantity, timeline, and any specific requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Free Quote Request</button>
+            </form>
+        </div>
+    `
+}
     }
 };
 
