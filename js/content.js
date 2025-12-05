@@ -240,7 +240,7 @@ const siteContent = {
                         <div class="process-step">
                             <div class="step-number">6</div>
                             <h3 class="section-subtitle" style="font-size: 1.2rem;">Delivery & Support</h3>
-                            <p>Secure shipping to your location + post-delivery technical support.</p>
+                            <p>Secure shipping to your  + post-delivery technical support.</p>
                         </div>
                     </div>
                     <div style="text-align: center; margin-top: 30px;">
@@ -325,16 +325,17 @@ const siteContent = {
                 </div>
                 <div class="cta-contact-item" style="margin-bottom: 15px;">
                     <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp: +86 138 xxxx xxxx</span>
+                    <span>WhatsApp: +86 134 3191 6523</span>
                 </div>
                 <div class="cta-contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Location: Guangdong, China</span>
+                    <span>Location: 4th Floor, Building A, No. 3 Yongbin Road, Tanzhou Town, Zhongshan City, Guangdong Province, China</span>
                 </div>
             </div>
             <!-- 核心修改：form标签添加action和redirect参数 -->
             <form class="contact-form" name="contact-form" method="POST" netlify action="/success.html" redirect="/success.html">
-                <input type="hidden" name="form-name" value="contact-form">
+            <!--原来的代码 <form class="contact-form" name="contact-form" method="POST" netlify> -->
+                <input type="hidden" name="form-name" value="contact-form"> <!-- 必须：Netlify识别表单 -->
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
@@ -361,6 +362,7 @@ const siteContent = {
             </form>
         </div>
     `
+
 }
     }
 };
@@ -499,4 +501,5 @@ document.getElementById("footer-content").innerHTML = `
     </div>
 `;
 document.getElementById("copyright-text").textContent = siteContent.footer.copyright;
+
 
