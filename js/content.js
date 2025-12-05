@@ -333,7 +333,7 @@ const siteContent = {
                 </div>
             </div>
             <!-- 核心修改：form标签添加action和redirect参数 -->
-            <form class="contact-form" name="contact-form" method="POST" netlify action="/success.html" redirect="/success.html">
+            <form class="contact-form" name="contact-form" method="POST" netlify action="/success.html">
             <!--原来的代码 <form class="contact-form" name="contact-form" method="POST" netlify> -->
                 <input type="hidden" name="form-name" value="contact-form"> <!-- 必须：Netlify识别表单 -->
                 <div class="form-group">
@@ -501,5 +501,6 @@ document.getElementById("footer-content").innerHTML = `
     </div>
 `;
 document.getElementById("copyright-text").textContent = siteContent.footer.copyright;
+
 
 
