@@ -333,7 +333,7 @@ const siteContent = {
                 </div>
             </div>
             <!-- 核心修改：form标签添加action和redirect参数 -->
-            <form class="contact-form" name="contact-form" method="POST" action="/success.html" netlify>
+            <form class="contact-form" name="contact-form" method="POST" action="https://sensational-churros-c47441.netlify.app/success.html" netlify>
                 <!--<input type="hidden" name="form-name" value="contact-form"> --> <!-- 必须：Netlify识别表单 -->
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -499,6 +499,7 @@ document.getElementById("footer-content").innerHTML = `
     </div>
 `;
 document.getElementById("copyright-text").textContent = siteContent.footer.copyright;
+
 
 
 
